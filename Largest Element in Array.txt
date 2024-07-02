@@ -1,0 +1,13 @@
+class Compute {
+    
+    public int largest(int arr[], int n)
+    {
+        int result = -99999999;
+        for(int i : arr){
+            if(i>result){
+                result=i;
+            }
+        }
+        return result;
+    }
+}
