@@ -1,0 +1,13 @@
+class Solution {
+    public int print2largest(List<Integer> arr) {
+        // Code Here
+        TreeSet<Integer> res=new TreeSet<Integer>();
+        res.addAll(arr);
+        if(res.size()<2){
+            return -1;
+        }
+        res.pollLast();
+        return res.last();
+        
+    }
+}
