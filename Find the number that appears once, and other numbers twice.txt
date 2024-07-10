@@ -1,0 +1,22 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        if(nums.length==1){
+            return nums[0];
+        }
+        Map<Integer,Integer> dict=new HashMap<>();
+        for(int i:nums){
+            if(dict.containsKey(i)){
+                dict.put(i,dict.get(i)+1);
+            }
+            else{
+                dict.put(i,1);
+            }
+        }
+        for(Map.Entry<Integer,Integer> entry:dict.entrySet()){
+            if(entry.getValue()==1){
+                return entry.getKey();
+            }
+        }
+        return -1;
+    }
+}
