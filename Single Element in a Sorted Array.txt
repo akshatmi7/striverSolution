@@ -1,0 +1,14 @@
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+        Map<Integer,Integer> countMap = new HashMap<>();
+        for(Integer element:nums){
+            countMap.put(element,countMap.getOrDefault(element,0)+1);
+        }
+        for(Map.Entry<Integer,Integer> entry : countMap.entrySet()){
+            if(entry.getValue()==1){
+                return entry.getKey();
+            }
+        }
+        return -1;
+    }
+}
